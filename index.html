@@ -2,37 +2,93 @@
 <html>
   <head>
     <title>Query Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css"/>
   </head>
+             
   <body>
-    <script src="index.js"></script>
-    <h1>Splunk Query Generator</h1>
+    <h1 style="text-align: center;">Splunk Query Generator</h1></br>
+
     <form>
-      <label for="dropdown1">Index:</label>
-      <select id="dropdown1" name="dropdown1">
-        <option value="option1">Old Logs</option>
-        <option value="option2">Current Logs</option>
-      </select><br><br>
-      <label for="dropdown2">Source Type:</label>
-      <select id="dropdown2" name="dropdown2">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </select><br><br>
-      <label for="dropdown3">Dropdown 3:</label>
-      <select id="dropdown3" name="dropdown3">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </select><br><br>
-      <label for="dropdown4">Dropdown 4:</label>
-      <select id="dropdown4" name="dropdown4">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </select><br><br>
-      <label for="textfield">Text Field:</label>
-      <input type="text" id="textfield" name="textfield"><br><br>
-      <input type="submit" value="Submit">
+      <div class="container">
+
+       <div class="input-field ">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="request">Request</option>
+      <option value="persist">Persist</option>
+    </select>
+    <label>Index</label></br>
+       </div>
+    <div class="input-field ">
+      <select>
+        <option value="" disabled selected>Choose your option</option>
+        <option value="*media*">Media Data Service</option>
+        <option value="*ingest*">ingest Web Service</option>
+        <option value="*Publish*">Publish Service</option>
+      </select>
+    <label>Source</label></br>
+  </div>
+  <div class="input-field">
+    <input placeholder="Enter the Account Name" type="text">
+    <label>Account Name</label>
+  </div></br>
+      <div class="input-field">
+        <select multiple>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">US</option>
+          <option value="2">EU</option>
+        </select>
+        <label>CCDS Region</label>
+      </div></br>
+      <div class="input-field">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="200">>2XX</option>
+          <option value="400">>4XX</option>
+          <option value="500">>5XX</option>
+        </select>
+        <label>Status Code</label>
+      </div></br>
+      <div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Generator Query
+        <i class="material-icons right">send</i>
+      </button>
+    </div><br>
+    <div>
+
+      <p>
+        <label>
+          <input type="checkbox"  onclick="myFunction()" id="myCheck"/>
+          <span>Show Graph</span>
+        </label>
+      </p>
+</div>
+</br>
+<div id="graph" style="display:none">
+  <div class="input-field">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="200">>2XX</option>
+      <option value="400">>4XX</option>
+      <option value="500">>5XX</option>
+    </select>
+    <label>Status Code</label>
+  </div></br>
+
+</div>
+    </div>
+
     </form>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems)
+  });
+    </script>
   </body>
 </html>
