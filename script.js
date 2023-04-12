@@ -16,6 +16,11 @@ function myFunction() {
     var ind=document.getElementById("index").value;
     var reg=document.getElementById("region").value;
     var stat=document.getElementById('status').value;
+    var acc=document.getElementById("account").value;
+    acc="acct_name=" +acc;
+    var charr=document.getElementById("chart").value;
     var sou=document.getElementById('source').value;
-    document.getElementById("out").innerHTML= ind + " " + sou + " " + reg + " " + stat;
+    //var spa=document.getElementById('span').value;
+
+    document.getElementById("out").innerHTML= ind + " " + sou + " " + reg + " " + stat+ " " + acc + " " + charr;
 }

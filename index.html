@@ -32,7 +32,7 @@
     </div>
       </div>
   <div class="input-field">
-    <input placeholder="Enter the Account Name" type="text">
+    <input placeholder="Enter the Account Name" type="text" id="account">
     <label>Account Name</label>
   </div></br>
       <div class="input-field">
@@ -64,13 +64,14 @@
 </br>
 <div id="graph" style="display:none">
   <div class="input-field">
-    <select>
+    <select id="chart">
       <option value="" disabled selected>Choose your option</option>
-      <option value="200">Host</option>
-      <option value="400">SourceType</option>
-      <option value="500">Status Code</option>
+      <option value="| timechart count by host">Host</option>
+      <option value="| timechart count by sourcetype">SourceType</option>
+      <option value="| timechart count by Status">Status Code</option>
     </select>
     <label>Count By</label>
+    
   </div></br>
 
 </div>
