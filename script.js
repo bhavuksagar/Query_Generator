@@ -11,3 +11,11 @@ function myFunction() {
       text.style.display = "none";
     }
   }
+
+  function returntex(){
+    var ind=document.getElementById("index").value;
+    var reg=document.getElementById("region").value;
+    var stat=document.getElementById('status').value;
+    var sou=document.getElementById('source').value;
+    document.getElementById("out").innerHTML= ind + " " + sou + " " + reg + " " + stat;
+}
